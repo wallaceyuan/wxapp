@@ -1,0 +1,22 @@
+<!--kknews.wxml-->
+  <scroll-view scroll-y="true" class="page-body" bindscrolltolower="loadMore">
+    <view wx:for="{{infos}}">
+        <navigator url="../item/item?id={{item.id}}">
+        <view class="item">
+            <image class="poster" src="{{item.titlepic}}"></image>
+            <view class="meta">
+                <text class="title">{{item.title}}</text>
+                <text class="sub-title">{{item.intro}}({{item.newsdate}})</text>
+            </view>
+            <view class="rating">
+                <text>{{item.keyboard.text}}</text>
+            </view>
+        </view>
+    </navigator>
+    </view>
+    <view class="tips">
+      <view wx:if="{{hasMore}}"><image src="/images/loading.gif" mode="aspectFill"/><text>玩了命的加载中...</text></view>
+      <view wx:else><text>没有更多内容了</text></view>
+    </view>
+  </scroll-view>
+  <loading hidden="{{!loading}}">加载中...</loading>

@@ -5,7 +5,8 @@
     "pages/board/board",
     "pages/item/item",
     "pages/search/search",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/kknews/kknews"
   ],
   "window":{
     "navigationBarBackgroundColor": "#35495e",
@@ -30,6 +31,12 @@
       {
         "text": "搜索",
         "pagePath": "pages/search/search",
+        "iconPath": "images/search.png",
+        "selectedIconPath": "images/search-actived.png"
+      },
+      {
+        "text": "新闻",
+        "pagePath": "pages/kknews/kknews",
         "iconPath": "images/search.png",
         "selectedIconPath": "images/search-actived.png"
       },

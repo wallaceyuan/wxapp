@@ -12,6 +12,13 @@ Page({
     loading: false,
     hasMore: false
   },
+  onLoad (params) {
+
+  },
+
+  onReady () {
+    //wx.setNavigationBarTitle({ title: this.data.title + ' « 读书 « 豆瓣' })
+  },
 
   loadMore () {
     if (!this.data.hasMore) return
