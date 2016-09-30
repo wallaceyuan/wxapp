@@ -1,0 +1,13 @@
+<!-- 电影明细 -->
+<loading hidden="{{!loading}}">
+  加载中...
+</loading>
+<scroll-view scroll-y="true" wx:if="{{book.title}}">
+  <view class="meta">
+    <image class="poster" src="{{book.images.large}}" background-size="cover"/>
+    <text class="title">{{book.title}}({{book.pubdate}})</text>
+    <text class="info">评分：{{book.rating.average}}</text>
+    <text class="info">作者：<block wx:for="{{book.author}}"> {{item}} </block></text>
+    <text class="info">页数：{{book.pages}}</text>
+  </view>
+</scroll-view>

@@ -1,0 +1,10 @@
+<!--todo.wxml-->
+<import src="../common/movie-list.wxml"/>
+<view class="input border">
+    <scroll-view scroll-y="true" class="page-body" bindscrolltolower="loadMore">
+        <view wx:for="{{books}}">
+            <template is="item1" data="{{ item, loading, hasMore, loadMore }}"/>
+        </view>
+    </scroll-view>
+    <button bindtap="setSeries">点击换个系列</button>
+</view>
