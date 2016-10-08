@@ -1,18 +1,19 @@
 <!--kknews.wxml-->
   <scroll-view scroll-y="true" class="page-body" bindscrolltolower="loadMore">
-    <view wx:for="{{infos}}">
+    <view wx:for="{{infos}}" wx:for-index="idx">
         <navigator url="../item/item?id={{item.id}}">
-        <view class="item">
-            <image class="poster" src="{{item.titlepic}}"></image>
-            <view class="meta">
-                <text class="title">{{item.title}}</text>
-                <text class="sub-title">{{item.intro}}({{item.newsdate}})</text>
+            <view wx:if="{{item.index == 0}}" class="bigPic">
+                <image class="poster" src="{{item.titlepic}}"></image>
+                <text>{{item.title}}</text>
             </view>
-            <view class="rating">
-                <text>{{item.keyboard.text}}</text>
+            <view wx:else class="kitem">
+                <view class="meta">
+                    <text class="title">{{item.title}}</text>
+                    <text class="key">{{item.keyboard.text}}</text>
+                </view>
+                <image src="{{item.titlepic}}"></image>
             </view>
-        </view>
-    </navigator>
+        </navigator>
     </view>
     <view class="tips">
       <view wx:if="{{hasMore}}"><image src="/images/loading.gif" mode="aspectFill"/><text>玩了命的加载中...</text></view>

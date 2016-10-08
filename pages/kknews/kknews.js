@@ -28,6 +28,7 @@ Page({
       .then(d => {
         console.log(d,d.list)
           if(d.list.length){
+              d.list[0].index = 0
               this.setData({infos:params?this.data.infos.concat(d.list):d.list, loading: false,next:d.list[d.list.length-1].newstime })
           }else{
               this.setData({hasMore:false,loading:false})
