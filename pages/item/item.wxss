@@ -13,7 +13,7 @@
 }
 
 .title {
-  font-style: 42rpx;
+  font-size: 42rpx;
   color: #444;
 }
 
@@ -36,5 +36,33 @@
 .content {
   color: #666;
   font-size: 20rpx;
-  padding: 10rpx
+  padding: 10rpx;
+}
+
+.annotations{
+    display: flex;
+    flex-direction: row ;
+    padding: 50rpx 40rpx;
+}
+.alist{
+  display: flex;
+  align-items: flex-start;
+}
+
+.alist .figure  {
+  margin-right: 1rpx;
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50%;
+}
+
+.alist .content {
+  flex: 1;
+}
+.alist .name{
+    font-size: 32rpx;
+    margin-right:10rpx;
+}
+.alist .abs_photo{
+  width: 100%;
 }

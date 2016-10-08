@@ -4,10 +4,27 @@
 </loading>
 <scroll-view scroll-y="true" wx:if="{{book.title}}">
   <view class="meta">
-    <image class="poster" src="{{book.images.large}}" background-size="cover"/>
+    <image class="poster" src="{{book.images.large}}" background-size="cover"></image>
     <text class="title">{{book.title}}({{book.pubdate}})</text>
     <text class="info">评分：{{book.rating.average}}</text>
     <text class="info">作者：<block wx:for="{{book.author}}"> {{item}} </block></text>
     <text class="info">页数：{{book.pages}}</text>
+  </view>
+  <view class="annotations">
+    <view wx:if="{{ant.total}}">
+      <view class="alist" wx:for="{{ant.annotations}}">
+          <image class="figure " src="{{item.author_user.avatar}}"></image>
+          <view class="content">
+            <text class="name">{{item.author_user.name}}</text><text wx:if="{{item.chapter}}">{{item.chapter}}</text>
+            <view class="ans">
+              <block wx:if="{{!item.abstract_photo}}">{{item.abstract}}</block>
+              <block wx:else>
+                <image class="abs_photo" src="{{item.photos[1]}}"></image>
+              </block>
+            </view>
+          </view>
+      </view>
+    </view>
+    <view wx:else class="annotations">暂无</view>
   </view>
 </scroll-view>

@@ -10,8 +10,8 @@ Page({
   },
 
   onLoad (params) {
-    douban.findOne(params.id)
-      .then(d => this.setData({ title: d.title, book: d, loading: false }))
+    douban.findLink(params.id)
+      .then(d => this.setData({ title: d.book.title, book: d.book,ant:d.annotations,loading: false }))
       .catch(e => {
         this.setData({ title: '获取数据异常', book: {}, loading: false })
         console.error(e)

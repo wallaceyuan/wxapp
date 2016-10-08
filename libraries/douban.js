@@ -1,5 +1,8 @@
 const API_URL = 'https://api.douban.com/v2/book'
 
+
+https://api.douban.com/v2/book/1074458/annotations?order=rank
+
 function fetchApi (type, params) {
   return new Promise((resolve, reject) => {
     wx.request({
@@ -27,6 +30,19 @@ module.exports = {
   findSeries(id){
     return fetchApi('series/' + id+'/books')
       .then(res => res.data)
+  },
+
+  findLink(id){
+    console.log('findLink')
+      var p1 = fetchApi('/'+id)
+      var p2 = fetchApi('/'+id+'/annotations?order=rank')
+      return Promise.all([p1, p2]).then(value  => {
+        console.log('value0',value[0])
+        var dd = {}
+        dd.book = value[0].data,dd.annotations = value[1].data
+        console.log('all promise  aaa',dd )
+        return dd 
+      });
   }
 }
 
