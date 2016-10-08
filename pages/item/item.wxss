@@ -5,7 +5,11 @@
   height: 1000rpx;
   padding: 50rpx 40rpx;
 }
-
+.meta image.cart{
+  width: 60rpx;
+  height: 60rpx;
+  align-self: flex-end;
+}
 .poster {
   width: 80%;
   height: 80%;

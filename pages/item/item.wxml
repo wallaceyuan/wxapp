@@ -9,6 +9,7 @@
     <text class="info">评分：{{book.rating.average}}</text>
     <text class="info">作者：<block wx:for="{{book.author}}"> {{item}} </block></text>
     <text class="info">页数：{{book.pages}}</text>
+    <image class="cart" src="../../images/star.png"></image>
   </view>
   <view class="annotations">
     <view wx:if="{{ant.total}}">
