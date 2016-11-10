@@ -1,7 +1,6 @@
 const API_URL = 'https://api.douban.com/v2/book'
 
 
-https://api.douban.com/v2/book/1074458/annotations?order=rank
 
 function fetchApi (type, params) {
   return new Promise((resolve, reject) => {
