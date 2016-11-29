@@ -1,4 +1,5 @@
 const API_URL = 'http://www.kankanews.com/webapi/kklist'
+import Promise from 'es6-promise.min';
 
 function fetchApi (type, params,time) {
   return new Promise((resolve, reject) => {

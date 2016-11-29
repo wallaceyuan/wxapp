@@ -20,7 +20,9 @@ Page({
     //wx.setNavigationBarTitle({ title: this.data.title + ' « 读书 « 豆瓣' })
   },
 
-  loadMore () {
+  loadMore (e) {
+    console.log(24,e)
+    console.log('loadMore')
     if (!this.data.hasMore) return
 
     this.setData({ subtitle: '加载中...', loading: true })

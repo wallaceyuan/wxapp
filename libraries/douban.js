@@ -1,5 +1,7 @@
-const API_URL = 'https://api.douban.com/v2/book'
+ "use strict"
+import Promise from 'es6-promise.min';
 
+const API_URL = 'https://api.douban.com/v2/book'
 
 
 function fetchApi (type, params) {

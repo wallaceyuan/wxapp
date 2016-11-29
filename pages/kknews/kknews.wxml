@@ -1,6 +1,6 @@
 <!--kknews.wxml-->
-  <scroll-view scroll-y="true" class="page-body" bindscrolltolower="loadMore">
-    <view wx:for="{{infos}}" wx:for-index="idx">
+  <scroll-view scroll-y="true" style="height:600px;" class="page-body" bindscrolltolower="loadMore">
+    <view wx:for="{{infos}}" wx:for-index="idx" wx:key="unique">
         <navigator url="../item/item?id={{item.id}}">
             <view wx:if="{{item.index == 0}}" class="bigPic">
                 <image class="poster" src="{{item.titlepic}}"></image>
