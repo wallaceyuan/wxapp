@@ -1,6 +1,25 @@
 .tc {
   text-align:center;
 }
+.timeline{
+  padding: 10px;
+}
+.timeline textarea{
+  width: 100%;
+}
+.addImg{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+.timeline .button button{
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  font-size: 15px;
+}
 .tc video{
   margin-bottom :10rpx;
 }
@@ -8,13 +27,11 @@
   font-size: 100rpx;
   padding: 40rpx;
 }
-
 .user {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .user-avatar {
   width: 520rpx;
   height: 520rpx;

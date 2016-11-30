@@ -12,6 +12,9 @@ Page({
   onLoad() {
     this.getData(this.data.id)
   },
+  onPullDownRefresh(){
+    this.getData(util.predict(Math.ceil(Math.random()*3)))
+  },
   getData(id){
     id = id?id:1
     douban.findSeries(id)

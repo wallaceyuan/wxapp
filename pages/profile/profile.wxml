@@ -1,9 +1,16 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="section tc">
-    <video webkit-playsinline="" src="http://hls.live.kksmg.com/live/live24h3/playlist.m3u8?se=kankan&amp;ct=2&amp;_cp=1&amp;_fk=89C3D7FB53CACB6410F01A0EDD689B7D19E9CDB3DBFCDB0212B58B37EC9E074D" poster="http://static.statickksmg.com/image/2016/05/27/72b01c94c01ad03fdde8806f2db536ba.jpg" controls="controls" preload="none"></video>
-    <video src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" binderror="videoErrorCallback"></video>
+<view class="timeline">
+  <view class="section button">
+    <button bindtap="tapclick" id="timeline">时间线</button>
+    <button bindtap="tapclick" id="mark">编写心情</button>
   </view>
+  <block>
+    <view wx:if="{{!mark}}" style="height:500px;background:red;">1</view>
+    <view wx:if="{{mark}}" style="height:500px;background:green;">
+        <textarea bindblur="bindTextAreaBlur" auto-height placeholder="自动变高" />
+        <button class="addImg" bindtap="addImg">添加图片</button>
+    </view>
+  </block>
   <view class="user" bindtap="getUserInfo">
     <image class="user-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"/>
     <text class="user-nickname">{{userInfo.nickName}}</text>
