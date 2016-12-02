@@ -1,4 +1,5 @@
 <!--index.wxml-->
+<import src="../common/movie-list.wxml"/>
 <view class="timeline">
   <view class="section button">
     <button bindtap="tapclick" id="timeline">时间线</button>
@@ -6,14 +7,11 @@
   </view>
   <block>
     <view wx:if="{{!mark}}" style="height:500px;background:red;">1</view>
-    <view wx:if="{{mark}}" style="height:500px;background:green;">
-        <textarea bindblur="bindTextAreaBlur" auto-height placeholder="自动变高" />
-        <button class="addImg" bindtap="addImg">添加图片</button>
+    <template is="dailymake" data="{{dailymakes}}"/>
+    <view wx:if="{{mark}}" class="fucButton">
+        <button class="addTxt"  bindtap="addImg">添加文字</button>
+        <button class="addImg"  bindtap="addImg">添加图片</button>
+        <button class="confirm" bindtap="addImg">确定发布</button>
     </view>
   </block>
-  <view class="user" bindtap="getUserInfo">
-    <image class="user-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"/>
-    <text class="user-nickname">{{userInfo.nickName}}</text>
-    <text class="user-nickname">{{userInfo.city}}, {{userInfo.province}}</text>
-  </view>
 </view>

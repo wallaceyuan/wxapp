@@ -7,10 +7,15 @@
 .timeline textarea{
   width: 100%;
 }
-.addImg{
+.fucButton{
+  width: 100%;
   position: absolute;
   bottom: 0px;
-  left: 0px;
+  left: 10px;
+}
+.fucButton button{
+  width: 33%;
+  display: inline-block;
 }
 .timeline .button button{
   width: 50%;
