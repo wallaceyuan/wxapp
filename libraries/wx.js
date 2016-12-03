@@ -26,7 +26,7 @@ var getImageInfo = (res)=>{
 var uploadFile = (res)=>{
     return new Promise((resolve,reject) =>{
         wx.uploadFile({
-            url: 'http://127.0.0.1:3000/upload',
+            url: 'http://www.wallaceyuan.cn/upload',
             filePath: res.tempFilePaths[0],
             name: 'uploadPoster',
             formData:{
