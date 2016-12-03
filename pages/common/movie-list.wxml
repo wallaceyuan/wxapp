@@ -2,9 +2,9 @@
 <!-- 例如：https://api.douban.com/v2/movie/top250?count=1 -->
 
 <template name="dailymake">
-  <image src="http://ohhtkbaxs.bkt.clouddn.com/1480646903530.jpeg"></image>
-  <view wx:for="{{dailymakes}}" wx:key="unique">
-    <text>{{item}}</text>
+  <view wx:for="{{dailymakes}}" wx:key="unique" >
+    <text wx:if="{{item.type == 'text'}}" class="dailli">{{item.content}}</text>
+    <image wx:if="{{item.type == 'image'}}" src="{{item.src}}" class="dailli"></image>
   </view>
 </template>
 

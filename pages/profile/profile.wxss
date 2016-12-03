@@ -50,3 +50,15 @@
 .usermotto {
   margin-top: 200px;
 }
+
+.dailli{
+  width:225rpx;
+  height:225rpx;
+  display:inline-block;
+  float:left;
+  border:1px solid #ddd;
+}
+.dailli image{
+  width:100%;
+  height:100%;
+}

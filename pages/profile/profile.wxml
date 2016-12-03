@@ -7,11 +7,11 @@
   </view>
   <block>
     <view wx:if="{{!mark}}" style="height:500px;background:red;">1</view>
-    <template is="dailymake" data="{{dailymakes}}"/>
+    <scroll-view  class="dailWrapper">
+      <template is="dailymake" data="{{dailymakes}}"/>
+    </scroll-view>
     <view wx:if="{{mark}}" class="fucButton">
-        <button class="addTxt"  bindtap="addImg">添加文字</button>
-        <button class="addImg"  bindtap="addImg">添加图片</button>
-        <button class="confirm" bindtap="addImg">确定发布</button>
+        <button class="addTxt"  bindtap="operate">操作</button>
     </view>
   </block>
 </view>

@@ -30,6 +30,7 @@ Page({
           if(d.list.length){
               d.list[0].index = 0
               this.setData({infos:params?this.data.infos.concat(d.list):d.list, loading: false,next:d.list[d.list.length-1].newstime })
+              this.setData({infos:d.list, loading: false,next:d.list[d.list.length-1].newstime })
           }else{
               this.setData({hasMore:false,loading:false})
           }
