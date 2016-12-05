@@ -1,64 +1,38 @@
-.tc {
-  text-align:center;
+.tc{text-align:center;}
+.timeline{padding:10px;}
+.timeline textarea{width:100%;}
+.fucButton{position:absolute;bottom:0;left:10px;width:100%;}
+.fucButton button{display:inline-block;width:33%;}
+.timeline .button button{display:inline-block;box-sizing:border-box;width:50%;border:1px solid #ddd;text-align:center;font-size:15px;}
+.tc video{margin-bottom:10rpx;}
+.page-header-text{padding:40rpx;font-size:100rpx;}
+.user{display:flex;flex-direction:column;align-items:center;}
+.user-avatar{margin:20rpx;width:520rpx;height:520rpx;}
+.user-nickname{color:#aaa;}
+.usermotto{margin-top:200px;}
+
+.item-container {
+  margin: 10rpx 20rpx;
+  position: relative;
 }
-.timeline{
-  padding: 10px;
-}
-.timeline textarea{
+.cover {
   width: 100%;
+  height: 400rpx;
+  display: block;
 }
-.fucButton{
-  width: 100%;
-  position: absolute;
-  bottom: 0px;
-  left: 10px;
+.desc {
+  margin: 10rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #E5E7ED;
 }
-.fucButton button{
-  width: 33%;
-  display: inline-block;
+.desc .left {
+
 }
-.timeline .button button{
-  width: 50%;
-  display: inline-block;
-  text-align: center;
-  border: 1px solid #ddd;
-  box-sizing: border-box;
-  font-size: 15px;
-}
-.tc video{
-  margin-bottom :10rpx;
-}
-.page-header-text {
-  font-size: 100rpx;
-  padding: 40rpx;
-}
-.user {
+.desc .right {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.user-avatar {
-  width: 520rpx;
-  height: 520rpx;
-  margin: 20rpx;
-}
-
-.user-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
-}
-
-.dailli{
-  width:225rpx;
-  height:225rpx;
-  display:inline-block;
-  float:left;
-  border:1px solid #ddd;
-}
-.dailli image{
-  width:100%;
-  height:100%;
 }

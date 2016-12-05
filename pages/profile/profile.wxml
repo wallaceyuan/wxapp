@@ -1,17 +1,13 @@
 <!--index.wxml-->
 <import src="../common/movie-list.wxml"/>
-<view class="timeline">
-  <view class="section button">
-    <button bindtap="tapclick" id="timeline">时间线</button>
-    <button bindtap="tapclick" id="mark">编写心情</button>
-  </view>
-  <block>
-    <view wx:if="{{!mark}}" style="height:500px;background:red;">1</view>
-    <scroll-view  class="dailWrapper">
-      <template is="dailymake" data="{{dailymakes}}"/>
-    </scroll-view>
-    <view wx:if="{{mark}}" class="fucButton">
-        <button class="addTxt"  bindtap="operate">操作</button>
+<view wx:for="{{dailymakes}}" wx:for-index="idx" class="item-container" bindtap="showDetail" id="{{idx}}">
+  <image wx:if="{{item.type == 'image'}}" src="{{item.src}}" class="cover"></image>
+  <view wx:if="{{item.type == 'text'}}" class="desc">
+    <view class="left">
+      <text style="font-size:32rpx;margin:10rpx 0;">{{item.text}}</text>
     </view>
-  </block>
+  </view>
+</view>
+<view class="timeline">
+  <button class="addTxt"  bindtap="add">操作</button>
 </view>

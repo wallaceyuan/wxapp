@@ -5,7 +5,7 @@ Page({
   data: {
     mark:true,
     title: 'About Me',
-    dailymakes:[{"type":'text','content':111},{"type":'text','content':222},{"type":"image",width:100,height:100,"src":'http://ohhtkbaxs.bkt.clouddn.com/1480746100230.jpeg'}],
+    dailymakes:[],
     userInfo: {
       wechat: 'WEDN-NET',
       nickName: 'wallace',
@@ -30,6 +30,11 @@ Page({
           this.setData({dailymakes:dd})
       });
     })
+  },
+  add(){
+    wx.redirectTo({
+        url: "../new/new",
+    });
   },
   operate(){
     wx.showActionSheet({
@@ -61,10 +66,6 @@ Page({
     var attr = event.target.id
     attr == "mark"? this.setData({mark:true}):this.setData({mark:false})
   },
-  test(){
-    //var obj = [{"type":'text','content':111},{"type":'text','content':222},{"type":"image",width:100,height:100,"src":'http://ohhtkbaxs.bkt.clouddn.com/1480746100230.jpeg'}]
-    //this.setData({dailymakes:[{"type":"image",width:100,height:100,"src":'http://ohhtkbaxs.bkt.clouddn.com/1480746100230.jpeg'}]})
-  },
   onLoad () {
     wx.login({
       success (res) {
@@ -77,5 +78,8 @@ Page({
       fail () {},
       complete () {},
     })
+    let dailymakes = wx.getStorageSync('dailymakes') || []
+    this.setData({dailymakes:dailymakes})
+    console.log(this.data.dailymakes)
   }
 })

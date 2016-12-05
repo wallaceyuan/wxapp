@@ -6,7 +6,8 @@
     "pages/item/item",
     "pages/search/search",
     "pages/profile/profile",
-    "pages/kknews/kknews"
+    "pages/kknews/kknews",
+    "pages/new/new"
   ],
   "window":{
     "navigationBarBackgroundColor": "#35495e",

@@ -1,0 +1,24 @@
+<import src="../common/movie-list.wxml"/>
+
+<view  style="width:100%;height:100%">
+	<view class="input-container">
+		<textarea placeholder="" bindblur="bindTextAreaBlur" auto-focus value="{{text}}"/>
+	</view>
+  <scroll-view class="dailWrapper">
+    <view wx:for="{{dailymakes}}" class="imgBlock" wx:key="{{index}}">
+      <span bindtap="delImg" data-index="{{index}}"></span>
+      <image wx:if="{{item.type == 'image'}}" src="{{item.src}}" class="dailli"></image>
+    </view>
+  </scroll-view>
+</view>
+<view class="tabbar">
+  <view class="item" bindtap="inputTouch">
+    <image class="icon" mode="aspectFit" src="../../images/tabbar/text.png"></image>
+  </view>
+  <view class="item" bindtap="addImg">
+    <image class="icon" mode="aspectFit" src="../../images/tabbar/image.png"></image>
+  </view>
+  <view class="item" bindtap="ok">
+    <image class="icon" mode="aspectFit" src="../../images/tabbar/ok.png"></image>
+  </view>
+</view>
