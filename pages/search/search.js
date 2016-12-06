@@ -1,6 +1,8 @@
 // Douban API 操作
 const douban = require('../../libraries/douban.js')
 
+var app = getApp()
+
 // 创建一个页面对象用于控制页面的逻辑
 Page({
   data: {
@@ -13,7 +15,7 @@ Page({
     hasMore: false
   },
   onLoad (params) {
-
+    app.todoRef.bindAsArray(this,'todo')
   },
 
   onReady () {

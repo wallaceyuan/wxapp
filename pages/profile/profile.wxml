@@ -1,6 +1,13 @@
 <!--index.wxml-->
 <import src="../common/movie-list.wxml"/>
-<view wx:for="{{dailymakes}}" wx:for-index="idx" class="item-container" bindtap="showDetail" id="{{idx}}">
+
+<view wx:for = "{{todo}}" wx:key="{{index}}">
+	{{item[".key"]}}-{{item[".value"]}}--{{item[".priority"]}}
+</view>
+
+
+
+<view wx:for="{{dailymakes}}" wx:for-index="idx" class="item-container" bindtap="showDetail" id="{{idx}}" wx:key="{{idx}}">
   <image wx:if="{{item.type == 'image'}}" src="{{item.src}}" class="cover"></image>
   <view wx:if="{{item.type == 'text'}}" class="desc">
     <view class="left">

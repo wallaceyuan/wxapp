@@ -1,9 +1,13 @@
 import {chooseImage,imgUpInfo} from '../../libraries/wx.js'
+var app = getApp();
+var ref = app.getRef();
+var updateInfo;
 
 Page({
 	data:{
 		dailymakes:[],
-		text:''
+		text:'',
+		userInfo:{}
 	},
 	delImg(e){
 		let index = e.target.dataset.index
@@ -21,6 +25,11 @@ Page({
 	    localData = localData.concat(Array.from(this.data.dailymakes))
 	    /*更新合并缓存*/
 	    wx.setStorageSync('dailymakes', localData)
+
+	    var postsRef = ref.child(this.data.userInfo.nickName);
+	    
+	    postsRef.push({"value" : this.data.dailymakes});
+
 		this.setData({dailymakes:[],text:''})
 		/*跳转*/
 		wx.redirectTo({
@@ -42,6 +51,11 @@ Page({
 		})
 	},
 	onLoad(){
-
+		app.getUserInfo(userInfo=>{
+			//更新数据
+			this.setData({
+				userInfo:userInfo
+			})
+		})
 	}
 })

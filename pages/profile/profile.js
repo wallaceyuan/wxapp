@@ -1,16 +1,15 @@
 // wx相关 API 操作
 import {chooseImage,imgUpInfo} from '../../libraries/wx.js'
 
+var app = getApp();
+var ref = app.getRef();
+
 Page({
   data: {
     mark:true,
     title: 'About Me',
     dailymakes:[],
-    userInfo: {
-      wechat: 'WEDN-NET',
-      nickName: 'wallace',
-      avatarUrl: '../../images/wechat_yuan.jpg'
-    }
+    userInfo: {}
   },
   getUserInfo () {
     const that = this
@@ -66,7 +65,18 @@ Page({
     var attr = event.target.id
     attr == "mark"? this.setData({mark:true}):this.setData({mark:false})
   },
+  getList:function(){
+    var that = this;
+    ref.bindAsArray(that,'todo');
+  },
   onLoad () {
+    app.getUserInfo(userInfo=>{
+      //更新数据
+      this.setData({
+        userInfo:userInfo
+      })
+      this.getList()
+    })
     wx.login({
       success (res) {
         if (res.code) {
