@@ -1,6 +1,6 @@
 import {chooseImage,imgUpInfo} from '../../libraries/wx.js'
 var app = getApp();
-var ref = app.getRef();
+//var ref = app.getRef();
 var updateInfo;
 
 Page({
@@ -28,7 +28,11 @@ Page({
 
 	    var postsRef = ref.child(this.data.userInfo.nickName);
 	    
-	    postsRef.push({"value" : this.data.dailymakes});
+	    var ref = app.getRef(this.data.userInfo.nickName);
+	    
+	    //ref.bindAsArray(this,'todo');
+
+	    ref.push({"value" : this.data.dailymakes});
 
 		this.setData({dailymakes:[],text:''})
 		/*跳转*/
@@ -51,11 +55,9 @@ Page({
 		})
 	},
 	onLoad(){
-		app.getUserInfo(userInfo=>{
-			//更新数据
-			this.setData({
-				userInfo:userInfo
-			})
+		//console.log('onLoad',app.globalData)
+		this.setData({
+			userInfo:app.globalData.userInfo
 		})
 	}
 })

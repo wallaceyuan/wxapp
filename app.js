@@ -35,6 +35,7 @@ App({
           wx.getUserInfo({
             success: function (res) {
               that.globalData.userInfo = res.userInfo
+              console.log('getUserInfo',that.globalData.userInfo)
               typeof cb == "function" && cb(that.globalData.userInfo)
             }
           })
