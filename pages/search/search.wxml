@@ -1,8 +1,6 @@
 <!-- 搜索电影 -->
 <import src="../common/movie-list.wxml"/>
 
-<view wx:for = "{{todo}}">{{item[".key"]}}-{{item[".value"]}}--{{item[".priority"]}}</view>
-
 <view class="page-header">
   <input class="page-header-text" placeholder="{{subtitle}}" bindchange="search"/>
 </view>

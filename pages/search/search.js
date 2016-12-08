@@ -15,7 +15,7 @@ Page({
     hasMore: false
   },
   onLoad (params) {
-    app.todoRef.bindAsArray(this,'todo')
+    //app.todoRef.bindAsArray(this,'todo')
   },
 
   onReady () {

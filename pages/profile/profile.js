@@ -2,7 +2,6 @@
 import {chooseImage,imgUpInfo} from '../../libraries/wx.js'
 
 var app = getApp();
-var ref = app.getRef();
 
 Page({
   data: {
@@ -66,8 +65,9 @@ Page({
     attr == "mark"? this.setData({mark:true}):this.setData({mark:false})
   },
   getList:function(){
-    var that = this;
-    ref.bindAsArray(that,'todo');
+    var name = this.data.userInfo.nickName
+    var ref = app.getRef(name);
+    ref.bindAsArray(this,'todo');
   },
   onLoad () {
     app.getUserInfo(userInfo=>{
@@ -77,7 +77,7 @@ Page({
       })
       this.getList()
     })
-    wx.login({
+/*    wx.login({
       success (res) {
         if (res.code) {
           console.log('登录成功！' + res.code)
@@ -87,7 +87,7 @@ Page({
       },
       fail () {},
       complete () {},
-    })
+    })*/
     let dailymakes = wx.getStorageSync('dailymakes') || []
     this.setData({dailymakes:dailymakes})
     console.log(this.data.dailymakes)
