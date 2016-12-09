@@ -6,6 +6,9 @@
 			<image src="{{todoItem}}"  class="cover"></image>
 		</view>
 		<text class="desc">{{item['.value']['text']}}</text>
+		<view wx:if="{{item['.value']['address']}}" class="address">
+			<span class="picon"></span>{{item['.value']['address']}}
+		</view>
 	</view>
 	<a class="addTxt" bindtap="add"></a>
 </view>

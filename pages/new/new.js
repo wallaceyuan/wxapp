@@ -8,7 +8,9 @@ Page({
 		imgBox:[],
 		dailymakes:[],
 		text:'',
-		userInfo:{}
+		userInfo:{},
+		address:'',
+		status:false
 	},
 	delImg(e){
 		let index = e.target.dataset.index
@@ -16,13 +18,8 @@ Page({
 		this.setData({imgBox:this.data.imgBox})
 		console.log(this.data.imgBox)
 	},
-	ok(e){
-		var that = this
-		
-		var textObj = {}
-		
-		textObj.type = 'text',textObj.text = this.data.text
-
+	ok(){
+		//var that = this
 		//this.setData({dailymakes:that.data.dailymakes.concat(textObj)})
 		/*获取缓存*/
 		//let localData = wx.getStorageSync('dailymakes') || []
@@ -32,14 +29,12 @@ Page({
 		//wx.setStorageSync('dailymakes', localData)
 
 		var postsRef = ref.child(this.data.userInfo.nickName);
-
-		//console.log(this.data.dailymakes)
-
 		//postsRef.push(this.data.dailymakes);
 
 		postsRef.push({
 			'image':this.data.imgBox,
-			'text':this.data.text
+			'text':this.data.text,
+			"address":this.data.address
 		})
 
 		this.setData({imgBox:[],text:''})
@@ -47,6 +42,24 @@ Page({
 		wx.redirectTo({
 			url: "../profile/profile",
 		});
+	},
+	cancel(){
+		this.setData({imgBox:[],text:''})
+		/*跳转*/
+		wx.redirectTo({
+			url: "../profile/profile",
+		});
+	},
+	cancelPlace(){
+		this.setData({address:'',status:false})
+	},
+	addPlace(){
+		wx.chooseLocation({
+			success:(res)=>{
+				var address = res.name
+				this.setData({status:true,address:address})
+			}
+		})
 	},
 	bindinput(e){
 		console.log('bindinput')

@@ -39,11 +39,18 @@ page{
   align-items: center;
   font-size:32rpx
 }
-.desc .left {
-
+.address{
+  height:30rpx;line-height:30rpx;
+  vertical-align: middle;
+  font-size:25rpx;
 }
 .desc .right {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.picon{
+  display:inline-block;
+  width:30rpx;height:30rpx;background:url('../../images/tabbar/place.png') center center no-repeat;
+  background-size:100% 100%;
 }
