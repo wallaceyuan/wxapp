@@ -10,15 +10,6 @@ Page({
     dailymakes:[],
     userInfo: {}
   },
-  getUserInfo () {
-    const that = this
-    wx.getUserInfo({
-      success (res) {
-        console.log(res)
-        that.setData({ userInfo: res.userInfo })
-      }
-    })
-  },
   addImg (){
     chooseImage().then((res)=>{
       imgUpInfo(res).then(values => { 
@@ -65,18 +56,12 @@ Page({
     attr == "mark"? this.setData({mark:true}):this.setData({mark:false})
   },
   getList:function(){
-    var name = this.data.userInfo.nickName
+    var name = app.globalData.userInfo.nickName
     var ref = app.getRef(name);
     ref.bindAsArray(this,'todo');
   },
   onLoad () {
-    app.getUserInfo(userInfo=>{
-      //更新数据
-      this.setData({
-        userInfo:userInfo
-      })
-      this.getList()
-    })
+    this.getList()
 /*    wx.login({
       success (res) {
         if (res.code) {
@@ -88,8 +73,7 @@ Page({
       fail () {},
       complete () {},
     })*/
-    let dailymakes = wx.getStorageSync('dailymakes') || []
-    this.setData({dailymakes:dailymakes})
-    console.log(this.data.dailymakes)
+    //let dailymakes = wx.getStorageSync('dailymakes') || []
+    //this.setData({dailymakes:dailymakes})
   }
 })

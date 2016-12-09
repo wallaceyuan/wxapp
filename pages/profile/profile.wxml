@@ -1,20 +1,11 @@
 <!--index.wxml-->
 <import src="../common/movie-list.wxml"/>
-
-<view wx:for = "{{todo}}" wx:key="{{index}}">
-	{{item[".key"]}}-{{item[".value"]}}--{{item[".priority"]}}
-</view>
-
-
-
-<view wx:for="{{dailymakes}}" wx:for-index="idx" class="item-container" bindtap="showDetail" id="{{idx}}" wx:key="{{idx}}">
-  <image wx:if="{{item.type == 'image'}}" src="{{item.src}}" class="cover"></image>
-  <view wx:if="{{item.type == 'text'}}" class="desc">
-    <view class="left">
-      <text style="font-size:32rpx;margin:10rpx 0;">{{item.text}}</text>
-    </view>
-  </view>
-</view>
 <view class="timeline">
-  <button class="addTxt"  bindtap="add">操作</button>
+	<view wx:for = "{{todo}}"  class="item-container"  bindtap="showDetail"  wx:key="{{idx}}">
+		<view wx:for="{{item['.value']['image']}}" wx:for-item="todoItem" wx:key="{{idx}}">
+			<image src="{{todoItem}}"  class="cover"></image>
+		</view>
+		<text class="desc">{{item['.value']['text']}}</text>
+	</view>
+	<a class="addTxt" bindtap="add"></a>
 </view>

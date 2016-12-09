@@ -22,7 +22,8 @@ App({
   },
   getRef:function(name){
     console.log('getRef')
-    return wilddog.sync().ref('todo/'+name);
+    var refName = name?'todo/'+name:'todo'
+    return wilddog.sync().ref(refName);
   },
   getUserInfo:function(cb){
     var that = this

@@ -25,8 +25,6 @@
 .input-container {
 	height: 75%;
 	background-color: #eceff4;
-	background-image: linear-gradient(#E1E6EA .1em, transparent .1em);
-	background-size: 100% 48rpx;
 	padding: 0;
 	box-sizing: border-box;
 	margin: 0 10rpx;
@@ -36,6 +34,7 @@
 	height: 100%;
 	font-size: 28rpx;
 	margin: 0px;
+	padding-top:10rpx;
 }
 .dailWrapper{
 	display:flex;
